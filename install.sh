@@ -24,7 +24,7 @@ apt-get -y install python ffmpeg zsh
 pip install youtube-dl
 mkdir -p $YOUTUBEDL_OUTPUT_FOLDER
 mkdir -p $YOUTUBEDL_CONFIG_FOLDER
-mkdir -p $YOUTUBEDL_MUSIC_CONFIG_FOLDER
+mkdir -p $YOUTUBEDL_MUSIC_OUTPUT_FOLDER
 mkdir -p $TERMUXURLOPENER_CONFIG_FOLDER
 # Download setup & config file
 curl -L https://raw.githubusercontent.com/PointVoider/termux-youtube-dl/master/.ytdl.conf > "${YOUTUBEDL_CONFIG_FOLDER}/config"
