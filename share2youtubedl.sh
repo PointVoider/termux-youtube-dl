@@ -1,21 +1,26 @@
-#!/bin/bash
-clear
+#!/data/data/com.termux/files/usr/bin/zsh
+#
+# This is a termux-url-opener script to do diffrent tasks on my Android phone 
 
-if [[ "$1" =~ ^.*youtu.*$ ]] || [[ "$1" =~ ^.*youtube.*$ ]]; then
-  echo -e "Downloading video...\\n>URL: ${1}\\n"
-  youtube-dl -F "$1"
-  read -p "Choose your video quality (press enter for: 'best') : " video
-  read -p "Choose your audio quality (press enter for: 'best') : " audio
-  if [[ "$video" = "" ]]; then
-    video="best"
-  fi
-  if [[ "$audio" = "" ]]; then
-    audio="best"
-  fi
-  youtube-dl -f "$video"+"$audio" "$1"
-elif [[ "$1" =~ ^.*nourlselected.*$ ]]; then
-  echo "There was an error"
-else youtube-dl -f best "$1"
-fi
+url=$1
+echo "YouTube-dl :\nWhat should I do with $url ?"
+echo "y) download video to ytdl-folder"
+echo "u) download video and convert it to mp3 (music-folder)"
+echo "x) nothing"
 
-read -p "Press enter to continue"
+read -s -k CHOICE
+case $CHOICE in
+    y)
+        echo "Downloading Video With Highest Quality Available\n"
+        youtube-dl $url
+        read -s -k '?Press any key to continue.'
+ ;;
+    u)
+    echo "Downloading Audio With Highest Quality Available\n"
+ youtube-dl --ignore-config -f bestaudio --extract-audio --audio-format mp3  --add-metadata --embed-thumbnail --output "/data/data/com.termux/files/home/storage/shared/Youtube-DL/Music/%(title)s.%(ext)s" $url
+ read -s -k '?Press any key to continue.'
+ ;;
+    x)
+        echo "bye"
+ ;;
+esac
