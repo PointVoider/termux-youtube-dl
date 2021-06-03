@@ -9,9 +9,9 @@ YOUTUBEDL_MUSIC_OUTPUT_FOLDER="${WORKING_DIR}/storage/shared/Youtube-DL/Music"
 YOUTUBEDL_CONFIG_FOLDER="${WORKING_DIR}/.config/youtube-dl/"
 TERMUXURLOPENER_CONFIG_FOLDER="${WORKING_DIR}/bin/"
 
-echo "Hi, This script setup an environment to download various videos from various apps"
+echo "Halo, Script ini akan melakukan instalasi untuk mengunduh video dari berbagai website"
 sleep 1
-echo -e "\n\n${BLUE}Requirements :"
+echo -e "\n\n${BLUE}Persyaratan :"
 echo -e "${NC}    1. Mengizinkan Akses Pada Penyimpanan"
 echo -e "${NC}    2. Koneksi Internet Yang Stabil.\n\n"
 read -p "Tekan Enter Untuk Melanjutkan:"
@@ -31,4 +31,5 @@ curl -L https://raw.githubusercontent.com/PointVoider/termux-youtube-dl/master/.
 curl -L https://raw.githubusercontent.com/PointVoider/termux-youtube-dl/master/share2youtubedl.sh > "${TERMUXURLOPENER_CONFIG_FOLDER}/termux-url-opener"
 
 echo -e "${BLUE}Selamat!!! Instalasi Selesai.\n\n"
+echo -e "${BLUE}Tekan Bagikan lalu pilih Termux pada video yang mau di unduh.\n\n"
 read -p "Tekan Enter Untuk Melanjutkan"
